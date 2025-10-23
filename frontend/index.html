@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BudgetBuddy 💰</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>💰 BudgetBuddy</h1>
+<p>Track your income, expenses & visualize charts!</p>
+<button id="themeToggle"><i class="fas fa-moon"></i></button>
+</header>
+
+<section class="metrics-section">
+<div class="metric-card income"><i class="fas fa-arrow-up"></i><h3>Total Income</h3><p id="totalIncome">₹0</p></div>
+<div class="metric-card expense"><i class="fas fa-arrow-down"></i><h3>Total Expense</h3><p id="totalExpense">₹0</p></div>
+<div class="metric-card balance"><i class="fas fa-wallet"></i><h3>Balance</h3><p id="balance">₹0</p></div>
+</section>
+
+<section class="form-section">
+<h2>Add Transaction</h2>
+<form id="transactionForm">
+<input type="date" id="date" required>
+<select id="type"><option value="Income">Income</option><option value="Expense">Expense</option></select>
+<input type="text" id="category" placeholder="Category" required>
+<input type="number" id="amount" placeholder="Amount" min="0" step="0.01" required>
+<input type="text" id="note" placeholder="Note">
+<button type="submit">Add Transaction</button>
+<button type="button" id="exportBtn">Export JSON</button>
+</form>
+</section>
+
+<section class="table-section">
+<h2>Transactions</h2>
+<table id="transactionTable"><thead><tr><th>Date</th><th>Type</th><th>Category</th><th>Amount</th><th>Note</th></tr></thead>
+<tbody></tbody></table>
+</section>
+
+<section class="charts">
+<h2>Charts</h2>
+<canvas id="pieChart" height="300"></canvas>
+<canvas id="lineChart" height="300"></canvas>
+<h2>Monthly Summary</h2>
+<canvas id="monthlyChart" height="300"></canvas>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
